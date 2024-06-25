@@ -9,6 +9,16 @@
 # testing
 /coverage
 
+#.env file
+.env
+.env.local 
+
+#DB: do not add database 
+SAMPLE_DATA.csv
+SAMPLE_DATA*
+sample*
+sample_data 
+
 # next.js
 /.next/
 /out/
