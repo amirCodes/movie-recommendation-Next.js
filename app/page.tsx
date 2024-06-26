@@ -1,11 +1,28 @@
-import Image from "next/image";
+import db from "@/db";
+import { Movie } from "@/types";
 
-export default function Home() {
+// refresh cache every 24 hours
+export const revalidate = 60 * 60 * 24;
+
+export default async function Home() {
+  const movies = db.collection("movies");
+
+  const allMovies = (await movies
+    .find(
+      {},
+      {
+        // this is how you exclude out the vector fields from the results
+        // projection: { $vector: 0 },
+      }
+    )
+    .toArray()) as Movie[];
+//  console.log(allMovies)
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="font-extrabold jutify-center">
-        Welcome to movie reccommendation app
-      </h1>
-    </main>
+    <div className="flex items-center justify-center pb-24 pt-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+        <h1>Welcome to movie recommendation page</h1>
+      </div>
+    </div>
   );
 }
