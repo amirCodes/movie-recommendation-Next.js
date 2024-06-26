@@ -17,11 +17,11 @@ function SearchInput() {
       className="w-full flex items-center px-5 rounded-full border-white bg-white border shadow-lg"
     >
       <Link href="/">
-        <HomeIcon className="h-10 w-10 text-gray-300" />
+        <HomeIcon className="h-10 w-10 text-blue-300" />
       </Link>
       <input
         type="text"
-        className="flex-1 p-5 outline-none"
+        className="flex-1 p-5 outline-none text-black"
         name="searchTerm"
         placeholder="What type of film do you like? e.g. Sci-Fi films in space..."
       />

@@ -20,4 +20,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Stacks implemented
 
 1: Next.js with app router 
+
 2: Astra DB -> astra.datastax.com
+
+3: OpenAI for vectorize
+
+4: Tailwind CSS
